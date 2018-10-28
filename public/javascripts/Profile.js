@@ -3,10 +3,10 @@ $(function () {
     $('.close').on('click', () => $('.alert').hide());
 
     function clickLogout() {
+        unbindClickAndDisable();
         $('.alert').hide();
         $('#currentStatus').text('Logging Out(Operation in progress)');
-        unbindClickAndDisable();
-
+        
         var xhr = new XMLHttpRequest();
         var url = "/users/logout";
         xhr.open("POST", url, true);

@@ -4,21 +4,24 @@ $(function () {
     $('.close').on('click', () => $('.alert').hide());
 
     function clickLogin() {
+        unbindClickAndDisable();
         $('.alert').hide();
         var username = $('#username').val();
         var password = $('#password').val();
         if (username == "" || password == "") {
             showErrorAlert('Username/Password cannot contain be blank');
+            bindClickAndEnable();
             return false;
         }
         var regex = /[\\/,.^]/g;
         if (username.match(regex) || password.match(regex)) {
             showErrorAlert('Username/Password cannot contain / \\ , . ^');
+            bindClickAndEnable();
             return false;
         }
 
         $('#currentStatus').text('Logging In(Operation in Progress)');
-        unbindClickAndDisable();
+
 
         var xhr = new XMLHttpRequest();
         var url = "/users/login";
@@ -57,6 +60,7 @@ $(function () {
             .prop('disabled', true)
             .css('cursor', 'not-allowed');
         $('#cancelButton')
+            .off('click')
             .css('cursor', 'not-allowed')
             .addClass('disabled');
 
@@ -68,6 +72,7 @@ $(function () {
             .prop('disabled', false)
             .css('cursor', 'pointer');
         $('#cancelButton')
+            .on('click', clickCancel)
             .css('cursor', 'pointer')
             .removeClass('disabled');
     }
