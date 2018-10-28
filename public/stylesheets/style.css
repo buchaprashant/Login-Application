@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   min-width: 320px;
 }
 
@@ -58,4 +58,13 @@ a {
   #title{
     font-size:50px;
   }
+}
+
+.code-box {
+  border: 1px solid #e6e8eb;
+  background: #F7F9FA;
+  margin-top: 4px;
+  padding: 2px;
+  padding-left: 5px;
+  color: #FF5E30;
 }

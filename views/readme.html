@@ -1,0 +1,74 @@
+<% include header.html %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h1>Index</h1>
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#requirements">Requirements</a></li>
+				<li><a href="#installation">Installation</a></li>
+				<li><a href="#dependencies">Dependencies</a></li>
+				<li><a href="#exceptions">Exceptions/End Cases</a></li>
+			</ul>
+		</div>
+		<div class="col-md-8">
+			<h1 id="about">About</h1><hr>
+			<p>This is a <strong>Single-Page Login/Logout Application</strong> with three views:</p>
+			<ul>
+				<li>A welcome view</li>
+				<li>A login view (form)</li>
+				<li>A private view (visible to logged-in users only)</li>
+			</ul>
+			<p>The server is a standalone service implemented using Node.js</p><br>
+
+			<h1 id="requirements">Requirements</h1><hr>
+			<ul>
+				<li>Browser supporting HTML5.</li>
+				<li>Cookies must be enabled on the browser.</li>
+				<li>Javascript must be enabled on the browser.</li>
+			</ul><br>
+
+			<h1 id="installation">Installation</h1><hr>
+			<ul>
+				<li>Download and install nvm
+					<p class="code-box">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash</p>
+				</li>
+				<li>Install the latest version of Node.js
+					<p class="code-box">nvm install node</p>
+				</li>
+				<li>Use the latest version
+					<p class="code-box">nvm use node</p>
+				</li>
+				<li>Install the dependencies
+					<p class="code-box">nvm install</p>
+				</li>
+				<li>Starting the server on port 3000
+					<p class="code-box">nvm start</p>
+				</li>
+			</ul><br>
+
+			<h1 id="dependencies">Dependencies</h1><hr>
+			<p>The following packages are used:</p>
+			<ul>
+				<li>"body-parser": "*",</li>
+			    <li>"cookie-parser": "~1.4.3",</li>
+			    <li>"debug": "~2.6.9",</li>
+			    <li>"ejs": "^2.6.1",</li>
+			    <li>"express": "~4.16.0",</li>
+			    <li>"http-errors": "~1.6.2",</li>
+			    <li>"morgan": "~1.9.0",</li>
+			    <li>"npm": "^6.4.1",</li>
+			    <li>"passport": "*",</li>
+			    <li>"passport-jwt": "*"</li>
+			</ul>
+
+			<h1 id="exceptions">Exceptions/End Cases</h1><hr>
+			<ul>
+				<li><strong>APIs Authentication</strong>: APIs are tested for authentication.</li>
+				<li><strong>Login Button Disabled</strong>: Once user clicks the login button, it is disabled till the status is "Logging In".</li>
+				<li><strong>Cookie Check</strong>: If cookie is set/user is logged in, the user is redirected to the private view if login page is accessed and if the cookie is not set/user is logged in, user is redirected to login view if private view is opened.</li>
+			</ul><br><br>
+		</div>
+	</div>
+</div>
