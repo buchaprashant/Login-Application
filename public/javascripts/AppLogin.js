@@ -1,5 +1,7 @@
 $(function () {
     $('#loginButton').on('click', clickLogin);
+    $('#cancelButton').on('click', clickCancel);
+    $('#nextButton').on('click', clickNext);
     $('.close').on('click', () => $('.alert').hide());
 
     function clickLogin() {
@@ -41,6 +43,21 @@ $(function () {
         };
         var data = JSON.stringify({ username, password });
         xhr.send(data);
+    }
+
+    function clickCancel() {
+        unbindClickAndDisable();
+        $("#viewPort").load("/?loadType=partial", function (response, status, xhr) {
+            $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
+            history.pushState('', 'Home', '/');
+        });
+    }
+
+    function clickNext() {
+        $("#viewPort").load("/users/login?loadType=partial", function (response, status, xhr) {
+            $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
+            history.pushState('', 'Login', '/users/login');
+        });
     }
 
     function unbindClickAndDisable() {

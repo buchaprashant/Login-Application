@@ -28,10 +28,17 @@ router.route('/login')
     if (req.cookies['token']) {
       return res.redirect('/users/profile');
     }
-    res.render('index', {
-      'loginStatus': 'Not Logged In',
-      'page': 'login'
-    });
+    if (req.query.loadType == 'partial') {
+      res
+        .append('loginStatus', 'Not Logged In')
+        .render('login');
+    }
+    else{
+      res.render('index', {
+        'loginStatus': 'Not Logged In',
+        'page': 'login'
+      });
+    }
   })
   .post((req, res, next) => {
     //if user is already logged in, redirect to his profile
