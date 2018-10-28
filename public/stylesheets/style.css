@@ -1,0 +1,61 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-width: 320px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.title-bar{
+  background-color: #00B7FF;
+  color: white;
+  padding: 15px 25px;
+}
+
+#title{
+  font-size:30px;
+  display: inline-block;
+}
+
+#statusDiv{
+  font-size:15px;
+}
+
+.body-content{
+  margin: 50px auto;
+}
+
+#statusDiv{
+  padding-top: 15px
+}
+
+#loginLabel{
+  font-size: 40px;
+  padding: 20px 0;
+}
+
+#loginForm{
+  font-size: 25px;
+}
+
+.container .details p{
+  font-size:15px;
+  font-weight:bold;
+}
+
+@media only screen and (min-width: 550px) {
+  #statusDiv{
+    padding: 0;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #statusDiv{
+    font-size: 25px
+  }
+  #title{
+    font-size:50px;
+  }
+}

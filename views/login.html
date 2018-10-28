@@ -1,0 +1,20 @@
+<div class="alert alert-warning alert-dismissible fade show" style="display: none" role="alert">
+    <span class="errorMessage"></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div id="loginLabel">Login</div>
+<form id="loginForm" name="LoginForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" required/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" required/>
+    </div>
+    <input type="button" id="loginButton" class="btn btn-primary btn-lg" value="Submit" name="Submit">
+    <a id="cancelButton" class="btn btn-primary btn-lg" href="/" role="button">Cancel</a>
+</form>
+<script src="/javascripts/AppLogin.js"></script>

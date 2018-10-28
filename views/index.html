@@ -1,0 +1,24 @@
+<% include header.html %>
+
+  <div class="title-bar">
+    <div id="title" class="title-bar-child">
+      Login Application
+    </div>
+    <div id='statusDiv' class="title-bar-child">
+      <strong>Your current status:</strong>
+      <div id="currentStatus">
+        <%= loginStatus %>
+      </div>
+    </div>
+  </div>
+  <div class="body-content container" id="viewPort">
+    <% if(page == 'profile') { %>
+      <% include profile.html %>
+    <% } else if(page == 'home') { %>
+      <% include home.html %>
+    <% } else if(page == 'login') { %>
+      <% include login.html %>
+    <% } %>
+  </div>
+
+  <% include footer.html %>
