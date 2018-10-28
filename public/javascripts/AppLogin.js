@@ -1,7 +1,6 @@
 $(function () {
     $('#loginButton').on('click', clickLogin);
     $('#cancelButton').on('click', clickCancel);
-    $('#nextButton').on('click', clickNext);
     $('.close').on('click', () => $('.alert').hide());
 
     function clickLogin() {
@@ -28,7 +27,6 @@ $(function () {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    var result = this.responseText;
                     $("#viewPort").load("profile?loadType=partial", function (response, status, xhr) {
                         $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
                         history.pushState('', 'Profile', '/users/profile');
@@ -50,13 +48,6 @@ $(function () {
         $("#viewPort").load("/?loadType=partial", function (response, status, xhr) {
             $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
             history.pushState('', 'Home', '/');
-        });
-    }
-
-    function clickNext() {
-        $("#viewPort").load("/users/login?loadType=partial", function (response, status, xhr) {
-            $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
-            history.pushState('', 'Login', '/users/login');
         });
     }
 

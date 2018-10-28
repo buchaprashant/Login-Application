@@ -12,8 +12,7 @@ $(function () {
         xhr.open("POST", url, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    var result = this.responseText;
+                if (xhr.status === 200) {                    
                     $("#viewPort").load("/?loadType=partial", function (response, status, xhr) {
                         $('#currentStatus').text(xhr.getResponseHeader('loginStatus'));
                         history.pushState('', 'Home', '/');
