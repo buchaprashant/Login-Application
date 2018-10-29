@@ -67,4 +67,5 @@ a {
   padding: 2px;
   padding-left: 5px;
   color: #FF5E30;
+  word-break: break-all;
 }
